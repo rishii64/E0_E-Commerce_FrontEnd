@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root{
+  min-height: 100vh;
+}
+.header{
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 40px;
+  margin: 5px 0;
+}
+.headerRight{
+  /* border: 1px solid; */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.searchBox{
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  height: 1.5em;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+.search{
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+}
+.title{
+  margin: 20px 0;
+  color: red;
+  text-align: center;
+}
+span{
+  font-weight: 400;
+}
+nav{
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.homePageLink{
+  text-decoration: none;
+  color: black;
+  transition: 300ms;
+  position: relative;
+}
+.homePageLink:hover::after{
+  padding: 0 10px;
+  border-right: 1px solid black;
+  content: '';
+  border-left: 1px solid black;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+}
+.homePageLink:hover{
+  color: rgb(255, 196, 0);
+}
+
+.products{
+  border: 1px solid blueviolet;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1vw;
+  gap: 1.2em;
+}
+.productData{
+  /* border: 1px solid red; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 13em;
+  height: 18em;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mobileImg {
+  min-width: 100px;
+  max-width: 180px;
+  max-height: 180px;
+}
+.laptopImg {
+  max-width: 180px;
+  max-height: 180px;
+}
+.cameraImg{
+  min-width: 100px;
+  max-width: 160px;
+  max-height: 225px;
+}
+.headphoneImg{
+  max-width: 200px;
+  max-height: 180px;
+}
