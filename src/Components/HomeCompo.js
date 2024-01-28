@@ -1,52 +1,53 @@
 import React from 'react'
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
+import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
+import logo from './ushop.png'
 import Home from '../Routes/Home'
-import Mobile from '../Routes/Mobile'
-import Laptop from '../Routes/Laptop'
-import Camera from '../Routes/Camera'
-import Headphone from '../Routes/Headphone'
-
+import ProductPage from '../Routes/ProductPage'
+import ReadProducts from '../Routes/ReadProducts'
+import Footer from './Footer'
 export default function HomeCompo() {
+    const navigate = useNavigate()
+    const imageClick = ()=> navigate('/home')
     return (
         <>
             <div className='header'>
-                <select className='language'>
+                <div className="headerleft">
+                {/* <select className='language'>
                     <option value='ENG'>Eng</option>
                     <option value='HIN'>HIN</option>
                     <option value='BEN'>BEN</option>
                     <option value='TML'>TML</option>
                     <option value='KND'>KND</option>
-                </select>
+                </select> */}
+                    <img onClick={imageClick} className='siteLogo' src={logo} alt='uShop' />
+                </div>
                 <div className='headerRight'>
                     <div className='searchBox'>
                         <input className='search' type='text' placeholder='search products'></input>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i className="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div className='profile'>
-                        <i class="fa-regular fa-user"></i>
+                        <i className="fa-regular fa-user"></i>
                     </div>
                     <div className='shopping'>
-                        <i class="fa-solid fa-bag-shopping"></i>
+                        <i className="fa-solid fa-bag-shopping"></i>
                     </div>
                 </div>
             </div>
             <h1 className='title'><span>u</span>Shop</h1>
-            <BrowserRouter>
                 <nav>
-                    <NavLink className='homePageLink' to='/home'>Home</NavLink>
-                    <NavLink className='homePageLink' to='/mobiles'>Mobile</NavLink>
-                    <NavLink className='homePageLink' to='/laptops'>Laptop</NavLink>
-                    <NavLink className='homePageLink' to='/cameras'>Camera</NavLink>
-                    <NavLink className='homePageLink' to='/headphones'>Headphone</NavLink>
+                    <NavLink className='homePageLink' to='/'>Home</NavLink>
+                    <NavLink className='homePageLink' to='/products/mobile'>Mobile</NavLink>
+                    <NavLink className='homePageLink' to='/products/laptop'>Laptop</NavLink>
+                    <NavLink className='homePageLink' to='/products/camera'>Camera</NavLink>
+                    <NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink>
                 </nav>
                 <Routes>
-                    <Route path='/home' element={<Home />} />
-                    <Route path='/mobiles' element={<Mobile />} />
-                    <Route path='/laptops' element={<Laptop />} />
-                    <Route path='/cameras' element={<Camera />} />
-                    <Route path='/headphones' element={<Headphone/>} />
+                    <Route path='/' element={<Home />} />
+                    <Route path='/products/:category' element={<ProductPage />} />
+                    <Route path='/product/:category/:id' element={<ReadProducts />} />
                 </Routes>
-            </BrowserRouter>
+            <Footer/>
         </>
     )
 }

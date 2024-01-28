@@ -1,25 +1,33 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-#root{
+
+#root {
   min-height: 100vh;
 }
-.header{
+
+/*------------ HomeComponent ------------*/
+.header {
   /* border: 1px solid green; */
   display: flex;
   justify-content: space-between;
   padding: 5px 40px;
   margin: 5px 0;
 }
-.headerRight{
+.siteLogo:hover{
+  width: 2em;
+  
+}
+.headerRight {
   /* border: 1px solid; */
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.searchBox{
+
+.searchBox {
   display: flex;
   align-items: center;
   border: 1px solid grey;
@@ -27,33 +35,39 @@
   border-radius: 10px;
   padding: 0 10px;
 }
-.search{
+
+.search {
   border-radius: 20px;
   border: none;
   outline: none;
   padding-left: 5px;
 }
-.title{
+
+.title {
   margin: 20px 0;
   color: red;
   text-align: center;
 }
-span{
+
+span {
   font-weight: 400;
 }
-nav{
+
+nav {
   width: 70%;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
-.homePageLink{
+
+.homePageLink {
   text-decoration: none;
   color: black;
   transition: 300ms;
   position: relative;
 }
-.homePageLink:hover::after{
+
+.homePageLink:hover::after {
   padding: 0 10px;
   border-right: 1px solid black;
   content: '';
@@ -64,21 +78,26 @@ nav{
   width: 100%;
   height: 100%;
 }
-.homePageLink:hover{
+
+.homePageLink:hover {
   color: rgb(255, 196, 0);
 }
 
-.products{
-  border: 1px solid blueviolet;
+/*------------ Routes(Product) Page ------------*/
+.products {
+  /* border: 1px solid blueviolet; */
+    background: #fbfbf2;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1vw;
+  padding: 2vw;
   gap: 1.2em;
 }
-.productData{
+
+.productData {
   /* border: 1px solid red; */
+  background: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 13em;
   height: 18em;
@@ -88,21 +107,79 @@ nav{
   justify-content: center;
   align-items: center;
 }
+
 .mobileImg {
   min-width: 100px;
   max-width: 180px;
   max-height: 180px;
 }
+
 .laptopImg {
   max-width: 180px;
   max-height: 180px;
 }
-.cameraImg{
+
+.cameraImg {
   min-width: 100px;
   max-width: 160px;
   max-height: 225px;
 }
-.headphoneImg{
+
+.headphoneImg {
   max-width: 200px;
   max-height: 180px;
+}
+
+/*------------ Footer Page ------------*/
+.footer {
+  /* border: 1px solid red; */
+  background: #212328;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 2em 2.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: white;
+  line-height: 2em;
+}
+.footer h1, .footer h3{
+  color: grey;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+.sectionTop {
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.uShop,.followUs,.contactUs {
+  /* border: 1px solid black; */
+  width: 26em;
+}
+.followUs .footerIcons{
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.fa-brands{
+  font-size: 16px;
+  color: white;
+}
+
+.sectionBottom {
+  /* border: 2px solid green; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sectionBottom div {
+  /* border: 1px solid yellow; */
+  width: 13em;
+  
 }
