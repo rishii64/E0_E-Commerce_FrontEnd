@@ -44,9 +44,29 @@ export default function Home() {
         </div>
       </Carousel>
 
+        <h1>BEST SELLERS:</h1>
       <div className="topProducts">
-        {loading ? <div className="loader" /> :
-          data.map((item, id) => {
+        <h1>Top Mobiles:</h1>
+        <div className="topMobiles">
+          {loading ? <div className="loader" /> :
+            data.filter((item) => item.category === 'mobile' && item.id <= 5).map((item, id) => {
+              return (
+                <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
+                  <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
+                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                  <span>{item.rating} <i className="fa-regular fa-star" /></span>
+                  <div className="productPrices">
+                    <div className="Dprice">₹{item.Dprice}</div>
+                    <div className="prod discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
+                  </div>
+                </div>
+              )
+            })}
+        </div>
+
+        <h1>Top Headphones</h1>
+        <div className="topHeadphones">
+          {data.filter(item => item.category === 'headphone' && item.id < 60).map((item, id) => {
             return (
               <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                 <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
@@ -59,6 +79,44 @@ export default function Home() {
               </div>
             )
           })}
+        </div>
+
+        <h1>Top Laptops:</h1>
+        <div className="topLaptops">
+          {data.filter(item => item.category === 'laptop' && item.id <= 25).map((item, id) => {
+            return (
+              <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
+                <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
+                <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                <span>{item.rating} <i className="fa-regular fa-star" /></span>
+                <div className="productPrices">
+                  <div className="Dprice">₹{item.Dprice}</div>
+                  <div className="prod discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        <h1>Top Cameras:</h1>
+        <div className="topCameras">
+          {data.filter(item => item.category === 'camera' && item.id <= 45).map((item, id) => {
+            return (
+              <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
+                <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
+                <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                <span>{item.rating} <i className="fa-regular fa-star" /></span>
+                <div className="productPrices">
+                  <div className="Dprice">₹{item.Dprice}</div>
+                  <div className="prod discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+        
+
+
       </div>
 
 
