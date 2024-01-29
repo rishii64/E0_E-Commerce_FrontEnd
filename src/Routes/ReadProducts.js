@@ -10,6 +10,7 @@ export default function ReadProducts() {
 
   useEffect(() => {
     try {
+      setLoading(true)
       axios.get(`http://localhost:4000/product/${category}/${id}`)
         .then(response => {
           setProducts(response.data)
@@ -21,21 +22,31 @@ export default function ReadProducts() {
     }
   }, [category, id])
   return (
-    <div>
-      { loading ? <p>Loading...</p> :
-        <div className="readProduct">
-          {products.map((item, index) => {
+    <>
+      <div className="readProduct">
+        {loading ? <div className="loader" /> :
+          products.map((item, index) => {
             return (
               <div className='viewProduct' key={index}>
-                <img src={item.images.LinkOne} alt='not found' />
+                <img className='prodImg' src={item.images.LinkOne} alt='not found' />
                 <div className="productDetails">
-                    <h2>{item.title}</h2>
+                  <h2>{item.title}</h2>
+                  <span>{item.rating} <i className="fa-regular fa-star" /></span>
+                  <div className="productPrices">
+                    <div className="Dprice">₹{item.Dprice}</div>
+                    <div className="Aprice">₹{item.Aprice}</div>
+                    <div className="discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
+                  </div>
+                  <button className='addToCart'><i className="fa-solid fa-cart-shopping" /> Add to cart</button>
+                  <div className="productDesc">Description: {item.description}</div>
                 </div>
               </div>
             )
           })}
-        </div>
-      }
-    </div>
+      </div>
+      <div className="moreproducts">
+        
+      </div>
+    </>
   )
 }

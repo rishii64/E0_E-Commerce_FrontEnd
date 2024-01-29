@@ -7,18 +7,18 @@ import ReadProducts from '../Routes/ReadProducts'
 import Footer from './Footer'
 export default function HomeCompo() {
     const navigate = useNavigate()
-    const imageClick = ()=> navigate('/home')
+    const imageClick = () => navigate('/')
     return (
         <>
             <div className='header'>
-                <div className="headerleft">
-                {/* <select className='language'>
-                    <option value='ENG'>Eng</option>
-                    <option value='HIN'>HIN</option>
-                    <option value='BEN'>BEN</option>
-                    <option value='TML'>TML</option>
-                    <option value='KND'>KND</option>
-                </select> */}
+                <div className="headerLeft">
+                    {/* <select className='language'>
+                        <option value='ENG'>Eng</option>
+                        <option value='HIN'>HIN</option>
+                        <option value='BEN'>BEN</option>
+                        <option value='TML'>TML</option>
+                        <option value='KND'>KND</option>
+                    </select> */}
                     <img onClick={imageClick} className='siteLogo' src={logo} alt='uShop' />
                 </div>
                 <div className='headerRight'>
@@ -35,19 +35,19 @@ export default function HomeCompo() {
                 </div>
             </div>
             <h1 className='title'><span>u</span>Shop</h1>
-                <nav>
-                    <NavLink className='homePageLink' to='/'>Home</NavLink>
-                    <NavLink className='homePageLink' to='/products/mobile'>Mobile</NavLink>
-                    <NavLink className='homePageLink' to='/products/laptop'>Laptop</NavLink>
-                    <NavLink className='homePageLink' to='/products/camera'>Camera</NavLink>
-                    <NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink>
-                </nav>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/products/:category' element={<ProductPage />} />
-                    <Route path='/product/:category/:id' element={<ReadProducts />} />
-                </Routes>
-            <Footer/>
+            <nav>
+                <NavLink className='homePageLink' to='/'>Home</NavLink>
+                <NavLink className='homePageLink' to='/products/mobile'>Mobile</NavLink>
+                <NavLink className='homePageLink' to='/products/laptop'>Laptop</NavLink>
+                <NavLink className='homePageLink' to='/products/camera'>Camera</NavLink>
+                <NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink>
+            </nav>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/products/:category' element={<ProductPage />} />
+                <Route path='/product/:category/:id' element={<ReadProducts />} />
+            </Routes>
+            <Footer />
         </>
     )
 }
