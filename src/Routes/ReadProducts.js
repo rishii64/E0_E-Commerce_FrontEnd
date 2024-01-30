@@ -11,7 +11,7 @@ export default function ReadProducts() {
   useEffect(() => {
     try {
       setLoading(true)
-      axios.get(`http://localhost:4000/product/${category}/${id}`)
+      axios.get(`https://e-commerce-backend-w7x2.onrender.com/product/${category}/${id}`)
         .then(response => {
           setProducts(response.data)
           setLoading(false)

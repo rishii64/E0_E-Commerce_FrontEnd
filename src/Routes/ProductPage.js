@@ -10,7 +10,7 @@ export default function ProductPage() {
     useEffect(() => {
         try {
             setLoading(true);
-            axios.get(`http://localhost:4000/products/${path}`)
+            axios.get(`https://e-commerce-backend-w7x2.onrender.com/products/${path}`)
                 .then((response) => {
                     setData(response.data)
                     setLoading(false)

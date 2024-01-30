@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     try {
       setLoading(true);
-      axios.get(`http://localhost:4000/`)
+      axios.get(`https://e-commerce-backend-w7x2.onrender.com`)
         .then((response) => {
           setData(response.data)
           setLoading(false)
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </Carousel>
 
-        <h1>BEST SELLERS:</h1>
+      <h1>BEST SELLERS:</h1>
       <div className="topProducts">
         <h1>Top Mobiles:</h1>
         <div className="topMobiles">
@@ -57,7 +57,7 @@ export default function Home() {
                   <span>{item.rating} <i className="fa-regular fa-star" /></span>
                   <div className="productPrices">
                     <div className="Dprice">₹{item.Dprice}</div>
-                    <div className="prod discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
+                    <div className="prod discPercent">{item.discountPercentage}% off</div>
                   </div>
                 </div>
               )
@@ -66,56 +66,57 @@ export default function Home() {
 
         <h1>Top Headphones</h1>
         <div className="topHeadphones">
-          {data.filter(item => item.category === 'headphone' && item.id < 60).map((item, id) => {
-            return (
-              <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
-                <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
-                <span>{item.rating} <i className="fa-regular fa-star" /></span>
-                <div className="productPrices">
-                  <div className="Dprice">₹{item.Dprice}</div>
-                  <div className="prod discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
+          {loading ? <div className="loader" /> :
+            data.filter(item => item.category === 'headphone' && item.id < 60).map((item, id) => {
+              return (
+                <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
+                  <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
+                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                  <span>{item.rating} <i className="fa-regular fa-star" /></span>
+                  <div className="productPrices">
+                    <div className="Dprice">₹{item.Dprice}</div>
+                    <div className="prod discPercent">{item.discountPercentage}% off</div>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
         </div>
 
         <h1>Top Laptops:</h1>
         <div className="topLaptops">
-          {data.filter(item => item.category === 'laptop' && item.id <= 25).map((item, id) => {
-            return (
-              <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
-                <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
-                <span>{item.rating} <i className="fa-regular fa-star" /></span>
-                <div className="productPrices">
-                  <div className="Dprice">₹{item.Dprice}</div>
-                  <div className="prod discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
+          {loading ? <div className="loader" /> :
+            data.filter(item => item.category === 'laptop' && item.id <= 25).map((item, id) => {
+              return (
+                <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
+                  <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
+                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                  <span>{item.rating} <i className="fa-regular fa-star" /></span>
+                  <div className="productPrices">
+                    <div className="Dprice">₹{item.Dprice}</div>
+                    <div className="prod discPercent">{item.discountPercentage}% off</div>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
         </div>
 
         <h1>Top Cameras:</h1>
         <div className="topCameras">
-          {data.filter(item => item.category === 'camera' && item.id <= 45).map((item, id) => {
-            return (
-              <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
-                <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
-                <span>{item.rating} <i className="fa-regular fa-star" /></span>
-                <div className="productPrices">
-                  <div className="Dprice">₹{item.Dprice}</div>
-                  <div className="prod discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
+          {loading ? <div className="loader" /> :
+            data.filter(item => item.category === 'camera' && item.id <= 45).map((item, id) => {
+              return (
+                <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
+                  <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
+                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                  <span>{item.rating} <i className="fa-regular fa-star" /></span>
+                  <div className="productPrices">
+                    <div className="Dprice">₹{item.Dprice}</div>
+                    <div className="prod discPercent">{item.discountPercentage}% off</div>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
         </div>
-        
-
 
       </div>
 
