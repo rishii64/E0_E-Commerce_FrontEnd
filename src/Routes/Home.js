@@ -27,7 +27,7 @@ export default function Home() {
     }
   }, [path])
   return (
-    <div>
+    <div className='homePage'>
       <Carousel className='ImgCrsl'>
         <div className='imageContainer'>
           <img className='image' src="https://img.freepik.com/free-vector/horizontal-banner-template-black-friday-sales_23-2150867247.jpg?w=1380&t=st=1706529299~exp=1706529899~hmac=d42013852b0b4241b23b68f95877850368b10d414f5ea5d0d13d9631a641bf9d" alt='not found' />
@@ -44,16 +44,16 @@ export default function Home() {
         </div>
       </Carousel>
 
-      <h1>BEST SELLERS:</h1>
+      <h1 className='bestSellers'>: BEST SELLERS :</h1>
       <div className="topProducts">
-        <h1>Top Mobiles:</h1>
+        <h2>Top Mobiles :</h2>
         <div className="topMobiles">
           {loading ? <div className="loader" /> :
-            data.filter((item) => item.category === 'mobile' && item.id <= 5).map((item, id) => {
+            data.filter((item) => item.category === 'mobile' && item.id < 5).map((item, id) => {
               return (
                 <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                   <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}</code></h2>
                   <span>{item.rating} <i className="fa-regular fa-star" /></span>
                   <div className="productPrices">
                     <div className="Dprice">₹{item.Dprice}</div>
@@ -64,14 +64,14 @@ export default function Home() {
             })}
         </div>
 
-        <h1>Top Headphones</h1>
+        <h2>Top Headphones :</h2>
         <div className="topHeadphones">
           {loading ? <div className="loader" /> :
-            data.filter(item => item.category === 'headphone' && item.id < 60).map((item, id) => {
+            data.filter(item => item.category === 'headphone' && item.id < 59).map((item, id) => {
               return (
                 <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                   <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                  <h2 className='productTitle'><code>{item.title.slice(0, 8)}..</code></h2>
                   <span>{item.rating} <i className="fa-regular fa-star" /></span>
                   <div className="productPrices">
                     <div className="Dprice">₹{item.Dprice}</div>
@@ -82,10 +82,10 @@ export default function Home() {
             })}
         </div>
 
-        <h1>Top Laptops:</h1>
+        <h2>Top Laptops :</h2>
         <div className="topLaptops">
           {loading ? <div className="loader" /> :
-            data.filter(item => item.category === 'laptop' && item.id <= 25).map((item, id) => {
+            data.filter(item => item.category === 'laptop' && item.id < 25).map((item, id) => {
               return (
                 <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                   <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
@@ -100,14 +100,14 @@ export default function Home() {
             })}
         </div>
 
-        <h1>Top Cameras:</h1>
+        <h2>Top Cameras :</h2>
         <div className="topCameras">
           {loading ? <div className="loader" /> :
-            data.filter(item => item.category === 'camera' && item.id <= 45).map((item, id) => {
+            data.filter(item => item.category === 'camera' && item.id < 45).map((item, id) => {
               return (
                 <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                   <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                  <h2 className='productTitle'><code>{item.title.slice(0, 12)}..</code></h2>
                   <span>{item.rating} <i className="fa-regular fa-star" /></span>
                   <div className="productPrices">
                     <div className="Dprice">₹{item.Dprice}</div>

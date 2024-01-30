@@ -129,6 +129,11 @@ nav {
   align-items: center;
   gap: 1em;
 }
+.homePage .bestSellers{
+  margin: auto;
+  /* border: 1px solid; */
+  width: 10em;
+}
 
 .topProducts {
   /* border: 1px solid; */
@@ -136,7 +141,7 @@ nav {
   margin: 1em .5em;
   padding: 1em 0;
 }
-.topProducts h1{
+.topProducts h2{
   margin-left: 2em;
   font-family: lucida;
 }
@@ -204,13 +209,18 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  /* text-align: justify; */
 }
 
 .productData:hover {
   cursor: pointer;
 }
-
+/* .productTitle{
+  border: 1px solid;
+  width: 90%;
+} */
 .productTitle a {
+
   text-decoration: none;
   color: black;
 }
@@ -229,7 +239,7 @@ nav {
 .cameraImg {
   min-width: 100px;
   max-width: 160px;
-  max-height: 225px;
+  max-height: 200px;
 }
 
 .headphoneImg {
@@ -409,11 +419,33 @@ nav {
 }
 
 @media only screen and (max-width:450px) {
-
+.header{
+  padding: 5px 20px;
+}
   .sectionTop,
   .sectionBottom {
     justify-content: center;
     text-align: center;
     gap: 1em;
+  }
+  .topMobiles,.topCameras,.topHeadphones,.topLaptops{
+    flex-direction: column;
+    margin: 1em 0;
+  }
+  .deliveryInfo{
+    flex-direction: column;
+  }
+  .info{
+    width: 100%;
+  }
+
+  .viewProduct{
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0;
+  }
+  .prodImg{
+    width: 80vw;
   }
 }
