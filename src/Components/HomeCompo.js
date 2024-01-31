@@ -5,6 +5,10 @@ import Home from '../Routes/Home'
 import ProductPage from '../Routes/ProductPage'
 import ReadProducts from '../Routes/ReadProducts'
 import Footer from './Footer'
+import Login from './Login'
+import Register from './Register'
+import AddToCart from './AddToCart'
+
 export default function HomeCompo() {
     const navigate = useNavigate()
     const imageClick = () => navigate('/')
@@ -12,13 +16,6 @@ export default function HomeCompo() {
         <>
             <div className='header'>
                 <div className="headerLeft">
-                    {/* <select className='language'>
-                        <option value='ENG'>Eng</option>
-                        <option value='HIN'>HIN</option>
-                        <option value='BEN'>BEN</option>
-                        <option value='TML'>TML</option>
-                        <option value='KND'>KND</option>
-                    </select> */}
                     <img onClick={imageClick} className='siteLogo' src={logo} alt='uShop' />
                 </div>
                 <div className='headerRight'>
@@ -26,10 +23,10 @@ export default function HomeCompo() {
                         <input className='search' type='text' placeholder='search products'></input>
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <div className='profile'>
+                    <div className='profile' onClick={() => navigate('/register')}>
                         <i className="fa-regular fa-user"></i>
                     </div>
-                    <div className='shopping'>
+                    <div className='shopping' onClick={() => navigate('/addToCart')}>
                         <i className="fa-solid fa-bag-shopping"></i>
                     </div>
                 </div>
@@ -43,6 +40,9 @@ export default function HomeCompo() {
                 <NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink>
             </nav>
             <Routes>
+                <Route path='/register' element={<Register />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/addToCart' element={<AddToCart />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/products/:category' element={<ProductPage />} />
                 <Route path='/product/:category/:id' element={<ReadProducts />} />

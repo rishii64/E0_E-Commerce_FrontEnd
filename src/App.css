@@ -4,12 +4,27 @@
   box-sizing: border-box;
 }
 
-#root {
+body {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  background: rgb(177, 218, 255);
+  /* background: url('https://plus.unsplash.com/premium_photo-1661400268374-602816dd906c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGVjb21tZXJjZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D'); */
+  background: url('https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGVjb21tZXJjZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D') no-repeat;
+  background-size: cover;
 }
 
 /*------------ HomeComponent ------------*/
+.topProducts {
+  background: #fbfbf2;
+}
+
+.searchBox,
+nav,
+.info,
+.readProduct {
+  background: white;
+}
+
 .header {
   /* border: 1px solid green; */
   display: flex;
@@ -36,7 +51,7 @@
 .searchBox {
   display: flex;
   align-items: center;
-  border: 1px solid grey;
+  border: none;
   height: 1.5em;
   border-radius: 10px;
   padding: 0 10px;
@@ -60,10 +75,13 @@ span {
 }
 
 nav {
-  width: 70%;
+  /* border: 1px solid; */
+  width: 100vw;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10vw;
+  padding: .5em 0;
 }
 
 .homePageLink {
@@ -89,6 +107,61 @@ nav {
   color: rgb(255, 196, 0);
 }
 
+/*------------ Register-Login Page ------------*/
+.registerPage,
+.loginPage {
+  /* border: 1px solid; */
+  border-radius: 10px;
+  width: 40vw;
+  height: 22em;
+  margin: 3em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: roboto;
+  background: rgba(255, 255, 255, 0.671);
+  backdrop-filter: blur(3px);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  padding-bottom: .5em;
+}
+
+.registerPage input,
+.loginPage input {
+  height: 2em;
+  padding-left: 1em;
+}
+
+.registerPage p,
+.loginPage p {
+  font-weight: 600;
+  color: orangered;
+}
+
+.registerPage p:hover,
+.loginPage p:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: 500ms;
+}
+
+.btnRegister,
+.btnLogin {
+  width: 8em;
+  height: 2.3em;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  background: rgb(255, 193, 78);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.btnRegister:hover,
+.btnLogin:hover {
+  cursor: pointer;
+}
+
+
 /*------------ Loader ------------*/
 .loader {
   width: 56px;
@@ -97,7 +170,7 @@ nav {
   border-radius: 50%;
   border: 9px solid;
   border-color: #dbdcef;
-  border-right-color: blue;
+  border-right-color: rgba(50, 50, 255, 0.883);
   animation: loader 1s infinite linear;
 }
 
@@ -129,10 +202,11 @@ nav {
   align-items: center;
   gap: 1em;
 }
-.homePage .bestSellers{
+
+.homePage .bestSellers {
   margin: auto;
   /* border: 1px solid; */
-  width: 10em;
+  width: 9em;
 }
 
 .topProducts {
@@ -141,18 +215,23 @@ nav {
   margin: 1em .5em;
   padding: 1em 0;
 }
-.topProducts h2{
+
+.topProducts h2 {
   margin-left: 2em;
   font-family: lucida;
 }
-.topMobiles,.topLaptops,.topHeadphones,.topCameras{
+
+.topMobiles,
+.topLaptops,
+.topHeadphones,
+.topCameras {
   /* border: 2px solid red; */
-  height: 22em;
+  height: fit-content;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 1em;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 
 
@@ -215,6 +294,7 @@ nav {
 .productData:hover {
   cursor: pointer;
 }
+
 /* .productTitle{
   border: 1px solid;
   width: 90%;
@@ -419,33 +499,41 @@ nav {
 }
 
 @media only screen and (max-width:450px) {
-.header{
-  padding: 5px 20px;
-}
+  .header {
+    padding: 5px 20px;
+  }
+
   .sectionTop,
   .sectionBottom {
     justify-content: center;
     text-align: center;
     gap: 1em;
   }
-  .topMobiles,.topCameras,.topHeadphones,.topLaptops{
+
+  .topMobiles,
+  .topCameras,
+  .topHeadphones,
+  .topLaptops {
     flex-direction: column;
     margin: 1em 0;
   }
-  .deliveryInfo{
+
+  .deliveryInfo {
     flex-direction: column;
   }
-  .info{
+
+  .info {
     width: 100%;
   }
 
-  .viewProduct{
+  .viewProduct {
     height: 100%;
     flex-direction: column;
     align-items: center;
     margin: 1em 0;
   }
-  .prodImg{
+
+  .prodImg {
     width: 80vw;
   }
 }

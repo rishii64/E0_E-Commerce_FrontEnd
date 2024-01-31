@@ -11,8 +11,14 @@ import { Carousel } from 'react-responsive-carousel';
 export default function Home() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
   const path = useParams().category
+  const navigate = useNavigate()
+
+  const handleLogOut =()=>{
+    localStorage.removeItem('Token:')
+    navigate('/login')
+  }
+
   useEffect(() => {
     try {
       setLoading(true);
