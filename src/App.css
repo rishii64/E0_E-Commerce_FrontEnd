@@ -37,7 +37,8 @@ nav,
   width: 2.5em;
 }
 
-.siteLogo:hover {
+.siteLogo:hover,.profile:hover, .shopping:hover,.registerPage p:hover,.loginPage p:hover,.btnRegister:hover,.btnLogin:hover,
+.productData:hover,.addToCart:hover  {
   cursor: pointer;
 }
 
@@ -140,7 +141,6 @@ nav {
 
 .registerPage p:hover,
 .loginPage p:hover {
-  cursor: pointer;
   scale: 1.1;
   transition: 500ms;
 }
@@ -155,12 +155,6 @@ nav {
   background: rgb(255, 193, 78);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
-.btnRegister:hover,
-.btnLogin:hover {
-  cursor: pointer;
-}
-
 
 /*------------ Loader ------------*/
 .loader {
@@ -291,16 +285,7 @@ nav {
   /* text-align: justify; */
 }
 
-.productData:hover {
-  cursor: pointer;
-}
-
-/* .productTitle{
-  border: 1px solid;
-  width: 90%;
-} */
 .productTitle a {
-
   text-decoration: none;
   color: black;
 }
@@ -428,7 +413,6 @@ nav {
 }
 
 .addToCart:hover {
-  cursor: pointer;
   position: relative;
   top: 3px;
 }

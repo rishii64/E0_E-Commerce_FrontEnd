@@ -11,7 +11,7 @@ export default function Login() {
 
   const handleLogin = () => {
     try {
-      axios.post('http://localhost:4600/login', { email, password })
+      axios.post('https://e-commerce-backend-w7x2.onrender.com/user/login', { email, password })
         .then((res) => {
           console.log(res.data.msg);
           if (res.data.msg === "User is not registered") {
