@@ -11,7 +11,7 @@ export default function Register() {
 
   const handleRegister = () => {
     try {
-      axios.post('https://e-commerce-backend-w7x2.onrender.com/register', { email, password })
+      axios.post('https://e-commerce-backend-w7x2.onrender.com/user/register', { email, password })
         .then((res) => {
           console.log(res.data.msg);
           if (res.data.msg === 'This email is already in use !!') {
