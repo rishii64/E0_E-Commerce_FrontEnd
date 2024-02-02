@@ -7,7 +7,7 @@ import ReadProducts from '../Routes/ReadProducts'
 import Footer from './Footer'
 import Login from './Login'
 import Register from './Register'
-import AddToCart from './AddToCart'
+import CartItems from './CartItems'
 
 export default function HomeCompo() {
     const navigate = useNavigate()
@@ -23,10 +23,10 @@ export default function HomeCompo() {
                         <input className='search' type='text' placeholder='search products'></input>
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <div className='profile' onClick={() => navigate('/register')}>
+                    <div className='profile' onClick={() => navigate('/user/register')}>
                         <i className="fa-regular fa-user"></i>
                     </div>
-                    <div className='shopping' onClick={() => navigate('/addToCart')}>
+                    <div className='shopping' onClick={() => navigate('/cart')}>
                         <i className="fa-solid fa-bag-shopping"></i>
                     </div>
                 </div>
@@ -40,9 +40,9 @@ export default function HomeCompo() {
                 <NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink>
             </nav>
             <Routes>
-                <Route path='/register' element={<Register />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/addToCart' element={<AddToCart />} />
+                <Route path='/user/register' element={<Register />} />
+                <Route path='/user/login' element={<Login />} />
+                <Route path='/cart' element={<CartItems />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/products/:category' element={<ProductPage />} />
                 <Route path='/product/:category/:id' element={<ReadProducts />} />

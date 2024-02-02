@@ -1,22 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Register() {
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
   const handleRegister = () => {
+    const tempData = {name, email, password}
     try {
-      axios.post('https://e-commerce-backend-w7x2.onrender.com/user/register', { email, password })
+      axios.post('http://localhost:4000/user/register', tempData )
         .then((res) => {
-          console.log(res.data.msg);
+          // console.log(res.data.msg);
           if (res.data.msg === 'This email is already in use !!') {
             alert(res.data.msg)
-            navigate('/login')
+            navigate('/user/login')
           }
           else {
             toast('Success!!', {
@@ -37,6 +39,14 @@ export default function Register() {
       console.error('Registration failed with error', err)
     }
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem('Token:')
+    if (token) {
+      navigate('/');
+    }
+  }, [navigate])
+  
   return (
     <div className='registerPage'>
       <ToastContainer />
@@ -46,7 +56,7 @@ export default function Register() {
       </section>
       <span>
         <label>Name: </label>
-        <input type='text' placeholder='enter name' /> <br /><br />
+        <input type='text' placeholder='enter name' value={name} onChange={(e) => setName(e.target.value)} /> <br /><br />
       </span>
       <span>
         <label>E-mail: </label>
@@ -57,7 +67,7 @@ export default function Register() {
         <input type='text' placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />  <br />
       </span>
       <button className='btnRegister' onClick={handleRegister}>Register</button>
-      <p onClick={() => navigate('/login')}>Existing User? Login</p>
+      <p onClick={() => navigate('/user/login')}>Existing User? Login</p>
     </div>
   )
 }
