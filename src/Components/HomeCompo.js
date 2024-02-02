@@ -9,6 +9,7 @@ import Login from './Login'
 import Register from './Register'
 import CartItems from './CartItems'
 import SuccessPage from './Payment_Integration/SuccessPage'
+import Navbar from './Navbar'
 
 export default function HomeCompo() {
     const navigate = useNavigate()
@@ -32,14 +33,17 @@ export default function HomeCompo() {
                     </div>
                 </div>
             </div>
-            <h1 className='title'><span>u</span>Shop</h1>
-            <nav>
+            
+            {/* <h1 className='title'><span>u</span>Shop</h1> */}
+            {/* <nav>
                 <NavLink className='homePageLink' to='/'>Home</NavLink>
                 <NavLink className='homePageLink' to='/products/mobile'>Mobile</NavLink>
                 <NavLink className='homePageLink' to='/products/laptop'>Laptop</NavLink>
                 <NavLink className='homePageLink' to='/products/camera'>Camera</NavLink>
                 <NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink>
-            </nav>
+            </nav> */}
+
+            <Navbar/>
             <Routes>
                 <Route path='/user/register' element={<Register />} />
                 <Route path='/user/login' element={<Login />} />

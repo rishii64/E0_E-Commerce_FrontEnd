@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@
 }
 body {
   min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: url('https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGVjb21tZXJjZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D') no-repeat;
   background-size: cover;
 }
@@ -53,10 +55,10 @@ body {
   padding-left: 5px;
 }
 .title {
-  /* border: 1px solid red; */
-  margin: 20px auto;
+  border: 1px solid red;
+  margin: auto;
   color: red;
-  font-size: 35px;
+  font-size: 25px;
   width:4em;
   background: rgb(255, 255, 255);
   padding: 0.1em .5em;
@@ -132,6 +134,102 @@ nav {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+/*------------ Navbar ------------*/
+.navbar {
+  height: 60px;
+  background-color: #fef7e5;
+  position: relative;
+}
+.container {
+  /* border: 1px solid; */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.logo img{
+  width: 40px;
+}
+.menu-icon img{
+  width: 40px;
+}
+.menu-icon {
+  display: none;
+}
+
+/* .nav-elements {
+} */
+
+.nav-elements ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.nav-elements ul li:not(:last-child) {
+  margin-right: 60px;
+}
+.nav-elements ul a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2f234f;
+  text-decoration: none;
+}
+.nav-elements ul a.active {
+  color: #574c4c;
+  font-weight: 500;
+  position: relative;
+}
+.nav-elements ul a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #574c4c;
+}
+
+@media (max-width: 768px) {
+  .nav-elements ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-elements {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #fef7e5;
+    width: 0px;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+    z-index: 1;
+    /* padding-left: 2em; */
+
+  }
+  .nav-elements.active {
+    width: 270px;
+  }
+  .nav-elements ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+  }
+  .nav-elements ul li {
+    margin-right: unset;
+    margin-top: 22px;
+  }
+}
+
+
 /*------------ Loader ------------*/
 .loader {
   width: 56px;
@@ -184,6 +282,7 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   gap: 1em;
+  margin-bottom: 1em;
 }
 .deliveryInfo {
   display: flex;
@@ -211,7 +310,6 @@ nav {
 .products {
   background: #fbfbf2;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-  /* width: 99%; */
   margin: 1em .5em;
   display: flex;
   flex-wrap: wrap;
@@ -223,7 +321,7 @@ nav {
   background: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
-  width: 14em;
+  width: 15em;
   height: 20em;
   padding: 10px;
   display: flex;
@@ -235,23 +333,11 @@ nav {
   text-decoration: none;
   color: black;
 }
-.mobileImg {
-  min-width: 100px;
-  max-width: 180px;
-  max-height: 180px;
-}
-.laptopImg {
-  max-width: 180px;
-  max-height: 180px;
-}
 .cameraImg {
   min-width: 100px;
   max-width: 160px;
   max-height: 200px;
-}
-.headphoneImg {
-  max-width: 200px;
-  max-height: 180px;
+  object-fit: contain;
 }
 
 /*------------ Read Product Page ------------*/
@@ -444,24 +530,6 @@ nav {
 .btnIncrement,.btnDecrement{
   width: 30px;
 }
-.btnRemove{
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .btnBuyNow {
   width: 130px;
   height: 40px;
@@ -583,7 +651,12 @@ nav {
 }
 
 
-@media only screen and (max-width:450px) {
+@media only screen and (max-width:780px) {
+  .productData{
+    width: 11em;
+  }
+}
+@media only screen and (max-width:540px) {
   /* need to update */
   nav a{ 
     font-size: calc(11px);
