@@ -139,10 +139,6 @@ nav {
 .menu-icon {
   display: none;
 }
-
-/* .nav-elements {
-} */
-
 .nav-elements ul {
   display: flex;
   justify-content: space-between;
@@ -188,12 +184,10 @@ nav {
     top: 60px;
     background-color: #fef7e5;
     width: 0px;
-    height: calc(100vh - 60px);
+    height: calc(80vh - 60px);
     transition: all 0.3s ease-in;
     overflow: hidden;
     z-index: 1;
-    /* padding-left: 2em; */
-
   }
   .nav-elements.active {
     width: 270px;
@@ -207,6 +201,54 @@ nav {
     margin-right: unset;
     margin-top: 22px;
   }
+}
+
+.menu-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: rgb(137, 111, 250);
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+}
+.bar {
+  width: 50%;
+  height: 2px;
+  background-color: rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 2px;
+}
+.bar::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  background-color: rgb(126, 117, 255);
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 5px white;
+}
+.bar1::before {
+  transform: translateX(-4px);
+}
+.bar2::before {
+  transform: translateX(4px);
+}
+.menu-btn:hover .bar1::before {
+  transform: translateX(4px);
+}
+.menu-btn:hover .bar2::before {
+  transform: translateX(-4px);
 }
 
 
@@ -652,6 +694,12 @@ nav {
   .topMobiles,.topCameras,.topHeadphones,.topLaptops {
     flex-direction: column;
     margin: 1em 0;
+  }
+  .cameraImg{
+    max-height: 160px;
+  }
+  .productData{
+    width: 15em;
   }
   .deliveryInfo {
     flex-direction: column;
