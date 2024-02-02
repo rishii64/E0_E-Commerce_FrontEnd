@@ -14,7 +14,7 @@ export default function Dashboard() {
       navigate('/login')
     }
     else {
-      axios.get('http://localhost:4600/dashboard', {
+      axios.get(`https://e-commerce-backend-w7x2.onrender.com/dashboard`, {
         headers: {
           authorization: `Bearer: ${token}`,
         },

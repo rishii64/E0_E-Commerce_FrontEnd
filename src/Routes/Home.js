@@ -14,10 +14,10 @@ export default function Home() {
   const path = useParams().category
   const navigate = useNavigate()
 
-  const handleLogOut =()=>{
-    localStorage.removeItem('Token:')
-    navigate('/login')
-  }
+  // const handleLogOut =()=>{
+  //   localStorage.removeItem('Token:')
+  //   navigate('/login')
+  // }
 
   useEffect(() => {
     try {

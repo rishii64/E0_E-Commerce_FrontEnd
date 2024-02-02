@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux'
-import { UserLogin, addToCart, increaseQuantity, decreaseQuantity, removeProduct, calculateTotalAmount } from '../Redux/Slice'
+import { increaseQuantity, decreaseQuantity, removeProduct} from '../Redux/Slice'
 
 export default function CartItems() {
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ export default function CartItems() {
       navigate('/user/login')
     }
     else {
-      axios.get('http://localhost:4000/user/cart')
+      axios.get(`https://e-commerce-backend-w7x2.onrender.com/user/cart`)
         .then((res) => {
           setMsg(res.data.msg)
         })
@@ -53,16 +53,15 @@ export default function CartItems() {
                   <p> ₹{item.Dprice}</p>
                   <span>
                     <button className='btnDecrement' onClick={() => handleDecrement(item.id)}>-</button>
-                    <span> {item.cartQuantity}</span>
+                    <span> {item.cartQuantity} </span>
                     <button className='btnIncrement' onClick={() => handleIncrement(item.id)}>+</button>
                   </span>
-                  <button className='remove' onClick={() => handleRemove(item.id)}>Remove</button>
-                  <button className='buyNow' >Buy Now</button>
+                  <button className='btnRemove' onClick={() => handleRemove(item.id)}>Remove</button>
                 </div>
 
                 <div className="priceDetails">
                   <span>Price: ₹{item.Dprice * item.cartQuantity}</span>
-                  <span>Discount: {item.discountPercentage}%</span>
+                  <span>Discount: 0 %</span>
                   <span>Shipping: Free</span>
                   <span>Total Price: ₹{item.Dprice * item.cartQuantity}</span>
                 </div>

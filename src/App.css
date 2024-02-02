@@ -482,8 +482,13 @@ nav {
 }
 
 /*------------ Cart Page ------------*/
+.emptyCartMessage{
+  /* border: 1px solid red; */
+  width: 7em;
+  margin: 5em auto;
+}
 .cartProducts,.priceDetails{
-  border: 1px solid;
+  /* border: 1px solid; */
   margin: 1em;
   display: flex;
   justify-content: space-around;
@@ -491,24 +496,38 @@ nav {
   padding: 1em;
 }
 .prodDetails{
-  border: 1px solid red;
+  /* border: 1px solid rgb(0, 0, 0); */
+  background: white;
   width: 15em;
   display: flex;
+  align-items: center;
   flex-direction: column;
   padding: 1em;
+  gap: 1em;
 }
 .cartImg{
   width: 15em;
   height: 15em;
 }
 .priceDetails{
+  background: white;
   width: 18em;
   flex-direction: column;
+  padding: 2em auto;
+}
+.btnIncrement,.btnDecrement{
+  width: 30px;
+}
+.btnRemove{
+  width: 7em;
+  height: 2.5em;
 }
 
 
-
 @media only screen and (max-width:450px) {
+  nav a{
+    font-size: calc(11px);
+  }
   .header {
     padding: 5px 20px;
   }
