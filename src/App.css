@@ -707,6 +707,10 @@ nav {
   .info {
     width: 100%;
   }
+  .cartProducts{
+    flex-direction: column;
+    align-items: center;
+  }
   .viewProduct {
     height: 100%;
     flex-direction: column;
