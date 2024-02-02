@@ -8,6 +8,7 @@ import Footer from './Footer'
 import Login from './Login'
 import Register from './Register'
 import CartItems from './CartItems'
+import SuccessPage from './Payment_Integration/SuccessPage'
 
 export default function HomeCompo() {
     const navigate = useNavigate()
@@ -43,6 +44,7 @@ export default function HomeCompo() {
                 <Route path='/user/register' element={<Register />} />
                 <Route path='/user/login' element={<Login />} />
                 <Route path='/cart' element={<CartItems />} />
+                <Route path='/payment/success' element={<SuccessPage/>} />
                 <Route path='/' element={<Home />} />
                 <Route path='/products/:category' element={<ProductPage />} />
                 <Route path='/product/:category/:id' element={<ReadProducts />} />

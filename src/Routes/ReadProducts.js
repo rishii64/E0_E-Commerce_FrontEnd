@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { addToCart } from '../Redux/Slice';
 
 export default function ReadProducts() {
   const { category, id } = useParams()
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-  const { Authorized } = useSelector((state) => state.App);
+  const token = localStorage.getItem('Token:')
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -27,10 +27,10 @@ export default function ReadProducts() {
   }, [category, id]);
 
   const handleAddToCartClick = (e, product) => {
-    if (Authorized) {
+    if (token) {
       toast.success('Item added successfully', {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -39,9 +39,8 @@ export default function ReadProducts() {
         theme: "light",
       });
       dispatch(addToCart(product))
-      console.log(product)
     } else {
-      toast.error('User Not LoggedIn', {
+      toast.error('User Not Logged In', {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -70,7 +69,12 @@ export default function ReadProducts() {
                     <div className="Aprice">₹{item.Aprice}</div>
                     <div className="discPercent">{item.discountPercentage}% off <i className="fa-solid fa-circle-info"></i></div>
                   </div>
-                  <button className='addToCart' onClick={(e) => handleAddToCartClick(e, item)}><i className="fa-solid fa-cart-shopping" /> Add to cart</button>
+
+                  <button className='addToCart' type='button' onClick={(e) => handleAddToCartClick(e, item)}>
+                    <p class="button__text">Add to cart</p>
+                    <span class="button__icon"><i class="fa-solid fa-plus"/></span>
+                  </button>
+
                   <div className="productDesc">Description: {item.description}</div>
                 </div>
               </div>

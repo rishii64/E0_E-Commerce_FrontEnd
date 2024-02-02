@@ -31,7 +31,7 @@ export default function Login() {
           else if (res.data.msg === 'Password is incorrect') {
             toast.error('Password is incorrect!!', {
               position: "top-right",
-              autoClose: 3000,
+              autoClose: 2000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -44,7 +44,7 @@ export default function Login() {
             dispatch(UserLogin(res.data.userData));
             toast.success('Logged in Successfully!!', {
               position: "top-right",
-              autoClose: 3000,
+              autoClose: 2000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,

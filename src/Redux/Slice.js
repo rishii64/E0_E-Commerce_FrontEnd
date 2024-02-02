@@ -52,9 +52,15 @@ const Slice = createSlice({
         calculateTotalAmount(state,action){
             state.cartTotalQuantity = action.payload.totalProducts
             state.cartTotalAmount = action.payload.totalCartPrice
-        }
+        },
+
+        checkoutProcess(state, action) {
+            state.cartItems = [];
+            state.cartTotalQuantity = 0;
+            localStorage.setItem("items", JSON.stringify(state.cartItems));
+        },
     }
 })
 
-export const { UserLogin, addToCart, increaseQuantity, decreaseQuantity, removeProduct, calculateTotalAmount } = Slice.actions
+export const { UserLogin, addToCart, increaseQuantity, decreaseQuantity, removeProduct, calculateTotalAmount, checkoutProcess } = Slice.actions
 export default Slice.reducer
