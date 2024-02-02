@@ -17,21 +17,11 @@ export default function Navbar() {
         </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
-            <li>
-              <NavLink className='homePageLink' to='/'>Home</NavLink>
-            </li>
-            <li>
-              <NavLink className='homePageLink' to='/products/mobile'>Mobile</NavLink>
-            </li>
-            <li>
-              <NavLink className='homePageLink' to='/products/laptop'>Laptop</NavLink>
-            </li>
-            <li>
-              <NavLink className='homePageLink' to='/products/camera'>Camera</NavLink>
-            </li>
-            <li>
-              <NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink>
-            </li>
+            <li><NavLink className='homePageLink' to='/'>Home</NavLink></li>
+            <li><NavLink className='homePageLink' to='/products/mobile'>Mobile</NavLink></li>
+            <li><NavLink className='homePageLink' to='/products/laptop'>Laptop</NavLink></li>
+            <li><NavLink className='homePageLink' to='/products/camera'>Camera</NavLink></li>
+            <li><NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink></li>
           </ul>
         </div>
       </div>

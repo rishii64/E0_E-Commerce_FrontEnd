@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import logo from './ushop.png'
 import Home from '../Routes/Home'
 import ProductPage from '../Routes/ProductPage'
@@ -33,16 +33,6 @@ export default function HomeCompo() {
                     </div>
                 </div>
             </div>
-            
-            {/* <h1 className='title'><span>u</span>Shop</h1> */}
-            {/* <nav>
-                <NavLink className='homePageLink' to='/'>Home</NavLink>
-                <NavLink className='homePageLink' to='/products/mobile'>Mobile</NavLink>
-                <NavLink className='homePageLink' to='/products/laptop'>Laptop</NavLink>
-                <NavLink className='homePageLink' to='/products/camera'>Camera</NavLink>
-                <NavLink className='homePageLink' to='/products/headphone'>Headphone</NavLink>
-            </nav> */}
-
             <Navbar/>
             <Routes>
                 <Route path='/user/register' element={<Register />} />
