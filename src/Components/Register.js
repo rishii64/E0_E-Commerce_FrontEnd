@@ -64,7 +64,7 @@ export default function Register() {
       </span>
       <span>
         <label>Password: </label>
-        <input type='text' placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />  <br />
+        <input type='password' placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />  <br />
       </span>
       <button className='btnRegister' onClick={handleRegister}>Register</button>
       <p onClick={() => navigate('/user/login')}>Existing User? Login</p>
