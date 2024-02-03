@@ -56,24 +56,17 @@ body {
 }
 .title {
   border: 1px solid red;
-  margin: auto;
   color: red;
+  height: 2em;
+  display: flex;
+  align-items: center;
   font-size: 25px;
-  width:4em;
   background: rgb(255, 255, 255);
   padding: 0.1em .5em;
   border-radius: 0 15px ;
 }
 span {
   font-weight: 400;
-}
-nav {
-  width: 98vw;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  gap: 10vw;
-  padding: .5em 0;
 }
 
 /*------------ Register-Login Page ------------*/
@@ -116,15 +109,18 @@ nav {
 
 /*------------ Navbar ------------*/
 .navbar {
+  /* border: 1px solid; */
   height: 60px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fef7e5;
   position: relative;
+  padding: 0 1.5em;
 }
 .container {
-  /* border: 1px solid; */
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -674,17 +670,21 @@ nav {
 
 
 @media only screen and (max-width:780px) {
+  .registerPage,.loginPage{
+    width: 60vw;
+  }
   .productData{
     width: 14em;
   }
 }
 @media only screen and (max-width:540px) {
-  /* need to update */
-  nav a{ 
-    font-size: calc(11px);
-  }
   .header {
     padding: 5px 20px;
+  }
+  /* .searchBox{width: 13em;} */
+
+  .registerPage,.loginPage{
+    width: 90vw;
   }
   .sectionTop,  .sectionBottom {
     justify-content: center;
