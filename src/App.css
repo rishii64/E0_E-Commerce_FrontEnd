@@ -336,7 +336,7 @@ span {
   justify-content: center;
 }
 .viewProduct {
-  height: 23em;
+  /* height: 23em; */
   width: 90vw;
   display: flex;
   gap: 2vw;
@@ -353,6 +353,7 @@ span {
   gap: 3vh;
   align-items: baseline;
   overflow-y: auto;
+  /* object-fit: contain; */
 }
 .productDetails span {
   border-radius: 3px;
