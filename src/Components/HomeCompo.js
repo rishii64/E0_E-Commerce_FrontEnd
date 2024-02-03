@@ -34,7 +34,7 @@ export default function HomeCompo() {
                         </div>
                     }
                     <div className='shopping' onClick={() => navigate('/cart')}>
-                        <i title='Cart' className="fa-solid fa-bag-shopping"></i>
+                        <i class="fa-solid fa-cart-shopping"/>
                     </div>
                 </div>
             </div>

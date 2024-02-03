@@ -60,12 +60,10 @@ const Slice = createSlice({
             localStorage.setItem("items", JSON.stringify(state.cartItems));
         },
         UserLogOut(state) {
-
             state.Authorized = false;
             state.userId = [];
             localStorage.clear("userId")
         }
-
     }
 })
 

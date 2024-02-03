@@ -35,16 +35,13 @@ export default function CartItems() {
   const handleRemove = (id) => {
     dispatch(removeProduct(id))
   }
-
   const handlebuynowClick = (e) => {
     setCheckout(true)
     setTimeout(() => {
       setCheckout(false)
       dispatch(checkoutProcess());
       navigate('/payment/success')
-
     }, 3000);
-
   }
 
   return (
@@ -71,13 +68,13 @@ export default function CartItems() {
                       </div>
                       <button className='btnRemove' onClick={() => handleRemove(item.id)}>
                         <p class="button__text">Remove</p>
-                        <span class="button__icon"><i className="fa-solid fa-x" style={{color: "white",}} /></span>
+                        <span class="button__icon"><i className="fa-solid fa-x" style={{ color: "white", }} /></span>
                       </button>
                     </div>
                   </div>
                 )
               }
-              )
+            )
           }
           {
             cartItems.length > 0 && <div className="priceDetails">
