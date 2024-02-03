@@ -54,6 +54,12 @@ body {
   outline: none;
   padding-left: 5px;
 }
+
+.LogOutIconButton{
+  color: tomato;
+  font-size: 23px;
+  cursor: pointer;
+}
 .title {
   border: 1px solid red;
   color: red;
@@ -494,10 +500,11 @@ span {
   width: 98%;
   height: 40vh;
   margin: 1em auto;
+  display: grid;
+  place-items: center;
 }
 .emptyCartMessage{
   width: 7em;
-  margin: 5em auto;
 }
 .cartProducts{
   /* border: 1px solid; */

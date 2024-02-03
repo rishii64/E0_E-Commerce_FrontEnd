@@ -10,10 +10,13 @@ import Register from './Register'
 import CartItems from './CartItems'
 import SuccessPage from './Payment_Integration/SuccessPage'
 import Navbar from './Navbar'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { UserLogOut } from '../Redux/Slice'
 export default function HomeCompo() {
     const navigate = useNavigate()
+    const { Authorized } = useSelector(state => state.App)
     const imageClick = () => navigate('/')
+    const dispatch = useDispatch();
     return (
         <>
             <div className='header'>
@@ -25,20 +28,22 @@ export default function HomeCompo() {
                         <input className='search' type='text' placeholder='search products'></input>
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <div className='profile' onClick={() => navigate('/user/register')}>
-                        <i className="fa-regular fa-user"></i>
-                    </div>
+                    {
+                        Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={()=>dispatch(UserLogOut())}></i> : <div className='profile' onClick={() => navigate('/user/register')}>
+                            <i className="fa-regular fa-user"></i>
+                        </div>
+                    }
                     <div className='shopping' onClick={() => navigate('/cart')}>
-                        <i className="fa-solid fa-bag-shopping"></i>
+                        <i title='Cart' className="fa-solid fa-bag-shopping"></i>
                     </div>
                 </div>
             </div>
-            <Navbar/>
+            <Navbar />
             <Routes>
                 <Route path='/user/register' element={<Register />} />
                 <Route path='/user/login' element={<Login />} />
                 <Route path='/cart' element={<CartItems />} />
-                <Route path='/payment/success' element={<SuccessPage/>} />
+                <Route path='/payment/success' element={<SuccessPage />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/products/:category' element={<ProductPage />} />
                 <Route path='/product/:category/:id' element={<ReadProducts />} />

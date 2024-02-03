@@ -49,7 +49,7 @@ const Slice = createSlice({
             localStorage.setItem("items", JSON.stringify(state.cartItems));
         },
 
-        calculateTotalAmount(state,action){
+        calculateTotalAmount(state, action) {
             state.cartTotalQuantity = action.payload.totalProducts
             state.cartTotalAmount = action.payload.totalCartPrice
         },
@@ -59,8 +59,15 @@ const Slice = createSlice({
             state.cartTotalQuantity = 0;
             localStorage.setItem("items", JSON.stringify(state.cartItems));
         },
+        UserLogOut(state) {
+
+            state.Authorized = false;
+            state.userId = [];
+            localStorage.clear("userId")
+        }
+
     }
 })
 
-export const { UserLogin, addToCart, increaseQuantity, decreaseQuantity, removeProduct, calculateTotalAmount, checkoutProcess } = Slice.actions
+export const { UserLogin, addToCart, increaseQuantity,UserLogOut, decreaseQuantity, removeProduct, calculateTotalAmount, checkoutProcess } = Slice.actions
 export default Slice.reducer
