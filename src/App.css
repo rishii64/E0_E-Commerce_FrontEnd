@@ -57,7 +57,7 @@ body {
 .title {
   border: 1px solid red;
   color: red;
-  height: 2em;
+  height: 1.8em;
   display: flex;
   align-items: center;
   font-size: 25px;
@@ -594,16 +594,17 @@ span {
   align-items: center;
   flex-direction: column;
   margin: 1em auto;
+  position: relative;
 }
 .successImg{
   width: 100%;
   height: 80vh;
   object-fit: contain;
 }
-.goShopping{
+.btnGoShopping{
   width: 10em;
   position: absolute;
-  bottom: -55px;
+  bottom: 10px;
   padding: 15px 30px;
   text-align: center;
   font-size: 18px;
@@ -617,11 +618,11 @@ span {
   border-radius: 10px;
   box-shadow: inset 0 0 0 0 #725AC1;
 }
-.goShopping:hover{
+.btnGoShopping:hover{
   color: white;
   box-shadow: inset 0 -100px 0 0 #725AC1;
 }
-.goShopping:active {
+.btnGoShopping:active {
   transform: scale(0.9);
 }
 
@@ -679,9 +680,9 @@ span {
 }
 @media only screen and (max-width:540px) {
   .header {
-    padding: 5px 20px;
+    padding: 5px 10px;
   }
-  /* .searchBox{width: 13em;} */
+  .search{width: 10em;}
 
   .registerPage,.loginPage{
     width: 90vw;
@@ -719,5 +720,16 @@ span {
   }
   .prodImg {
     width: 80vw;
+  }
+  .prodDetails{
+    width: 80vw;
+  }
+  .priceDetails{
+    width: 90vw;
+  }
+  .btnGoShopping{
+    width: 8em;
+    bottom: 11vh;
+    padding: 10px 20px;
   }
 }

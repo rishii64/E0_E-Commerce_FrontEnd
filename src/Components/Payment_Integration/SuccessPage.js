@@ -7,7 +7,7 @@ export default function SuccessPage() {
   return (
     <div className='successPage'>
       <img className='successImg' src={success} alt='success' />
-      <button className='goShopping' onClick={()=>navigate('/')}>continue</button>
+      <button className='btnGoShopping' onClick={()=>navigate('/')}>continue</button>
     </div>
   )
 }
