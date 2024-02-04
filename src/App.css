@@ -26,12 +26,16 @@ body {
   margin: 5px 0;
 }
 .siteLogo {
-  width: 2.5em;
+  width: 3em;
 }
 .profile,.shopping{
-  font-size: 18px;
+  font-size: 22px;
 }
-.siteLogo:hover,.profile:hover, .shopping:hover,.registerPage p:hover,.loginPage p:hover,
+.LogOutIconButton{
+  color: tomato;
+  font-size: 26px;
+}
+.siteLogo:hover,.profile:hover,.LogOutIconButton:hover, .shopping:hover,.registerPage p:hover,.loginPage p:hover,
 .btnRegister:hover,.btnLogin:hover,.productData:hover,.addToCart:hover  {
   cursor: pointer;
 }
@@ -43,22 +47,17 @@ body {
 .searchBox {
   display: flex;
   align-items: center;
-  border: none;
-  height: 1.5em;
-  border-radius: 10px;
+  height: 2.2em;
+  border-radius: 18px;
   padding: 0 10px;
 }
 .search {
   border-radius: 20px;
+  width: 15em;
+  font-size: 15px;
   border: none;
   outline: none;
-  padding-left: 5px;
-}
-
-.LogOutIconButton{
-  color: tomato;
-  font-size: 23px;
-  cursor: pointer;
+  padding-left: 10px;
 }
 .title {
   border: 1px solid red;
@@ -255,21 +254,21 @@ span {
   margin: auto;
   width: 9em;
 }
+
 .topProducts {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-  margin: 1em .5em;
+  margin: 1em .3em;
   padding: 1em 0;
 }
-.topProducts h2 {
-  margin-left: 2em;
-  font-family: lucida;
+.topProducts h1{
+  margin-left: 1.5em;
 }
 .topMobiles,.topLaptops,.topHeadphones,.topCameras {
   height: fit-content;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 1em;
+  gap: .4em;
   margin-bottom: 1em;
 }
 .deliveryInfo {
@@ -323,8 +322,8 @@ span {
 }
 .cameraImg {
   min-width: 100px;
-  max-width: 160px;
-  max-height: 200px;
+  max-width: 150px;
+  max-height: 170px;
   object-fit: contain;
 }
 
@@ -353,7 +352,6 @@ span {
   gap: 3vh;
   align-items: baseline;
   overflow-y: auto;
-  /* object-fit: contain; */
 }
 .productDetails span {
   border-radius: 3px;
@@ -683,6 +681,9 @@ span {
   .header {
     padding: 5px 10px;
   }
+  .headerRight{
+    gap: 10px;
+  }
   .search{width: 10em;}
 
   .registerPage,.loginPage{
@@ -696,6 +697,7 @@ span {
   .topMobiles,.topCameras,.topHeadphones,.topLaptops {
     flex-direction: column;
     margin: 1em 0;
+    gap: 1em;
   }
   .cameraImg{
     max-height: 160px;
@@ -705,6 +707,7 @@ span {
   }
   .deliveryInfo {
     flex-direction: column;
+    gap: 1em;
   }
   .info {
     width: 100%;

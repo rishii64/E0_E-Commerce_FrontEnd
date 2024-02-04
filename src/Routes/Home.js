@@ -47,14 +47,14 @@ export default function Home() {
 
       <h1 className='bestSellers'>: BEST SELLERS :</h1>
       <div className="topProducts">
-        <h2>Top Mobiles :</h2>
+        <h1>Top Mobiles :</h1>
         <div className="topMobiles">
           {loading ? <div className="loader" /> :
             data.filter((item) => item.category === 'mobile' && item.id < 5).map((item, id) => {
               return (
                 <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                   <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}</code></h2>
+                  <p className='productTitle'>{item.title}</p>
                   <span>{item.rating} <i className="fa-regular fa-star" /></span>
                   <div className="productPrices">
                     <div className="Dprice">₹{item.Dprice}</div>
@@ -65,14 +65,14 @@ export default function Home() {
             })}
         </div>
 
-        <h2>Top Headphones :</h2>
+        <h1>Top Headphones :</h1>
         <div className="topHeadphones">
           {loading ? <div className="loader" /> :
             data.filter(item => item.category === 'headphone' && item.id < 59).map((item, id) => {
               return (
                 <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                   <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                  <h2 className='productTitle'><code>{item.title.slice(0, 8)}..</code></h2>
+                  <p className='productTitle'>{item.title.slice(0, 20)}..</p>
                   <span>{item.rating} <i className="fa-regular fa-star" /></span>
                   <div className="productPrices">
                     <div className="Dprice">₹{item.Dprice}</div>
@@ -83,14 +83,14 @@ export default function Home() {
             })}
         </div>
 
-        <h2>Top Laptops :</h2>
+        <h1>Top Laptops :</h1>
         <div className="topLaptops">
           {loading ? <div className="loader" /> :
             data.filter(item => item.category === 'laptop' && item.id < 25).map((item, id) => {
               return (
                 <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                   <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                  <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                  <p className='productTitle'>{item.title.slice(0, 20)}..</p>
                   <span>{item.rating} <i className="fa-regular fa-star" /></span>
                   <div className="productPrices">
                     <div className="Dprice">₹{item.Dprice}</div>
@@ -101,14 +101,14 @@ export default function Home() {
             })}
         </div>
 
-        <h2>Top Cameras :</h2>
+        <h1>Top Cameras :</h1>
         <div className="topCameras">
           {loading ? <div className="loader" /> :
             data.filter(item => item.category === 'camera' && item.id < 45).map((item, id) => {
               return (
                 <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                   <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                  <h2 className='productTitle'><code>{item.title.slice(0, 12)}..</code></h2>
+                  <p className='productTitle'>{item.title.slice(0, 20)}..</p>
                   <span>{item.rating} <i className="fa-regular fa-star" /></span>
                   <div className="productPrices">
                     <div className="Dprice">₹{item.Dprice}</div>
@@ -118,9 +118,7 @@ export default function Home() {
               )
             })}
         </div>
-
       </div>
-
 
       <section className='deliveryInfo'>
         <div className="info">

@@ -27,7 +27,7 @@ export default function ProductPage() {
                     return (
                         <div className='productData' onClick={() => navigate(`/product/${item.category}/${item.id}`)} key={id}>
                             <img className='cameraImg' src={item.images.LinkOne} alt={item.title} />
-                            <h2 className='productTitle'><code>{item.title.slice(0, 15)}..</code></h2>
+                            <p className='productTitle'>{item.title.slice(0, 20)}..</p>
                             <span>{item.rating} <i className="fa-regular fa-star" /></span>
                             <div className="productPrices">
                                 <div className="Dprice">₹{item.Dprice}</div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import logo from './ushop.png'
 import Home from '../Routes/Home'
@@ -12,11 +12,16 @@ import SuccessPage from './Payment_Integration/SuccessPage'
 import Navbar from './Navbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { UserLogOut } from '../Redux/Slice'
+
 export default function HomeCompo() {
     const navigate = useNavigate()
     const { Authorized } = useSelector(state => state.App)
     const imageClick = () => navigate('/')
     const dispatch = useDispatch();
+
+    // const [data, setData] = useState([])
+    const [input, setInput] = useState('')
+
     return (
         <>
             <div className='header'>
@@ -25,16 +30,16 @@ export default function HomeCompo() {
                 </div>
                 <div className='headerRight'>
                     <div className='searchBox'>
-                        <input className='search' type='text' placeholder='search products'></input>
+                        <input className='search' type='text' placeholder='search products' onChange={(e) => setInput(e.target.value)} value={input} />
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </div>
                     {
-                        Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={()=>dispatch(UserLogOut())}></i> : <div className='profile' onClick={() => navigate('/user/register')}>
+                        Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={() => dispatch(UserLogOut())}></i> : <div className='profile' onClick={() => navigate('/user/register')}>
                             <i className="fa-regular fa-user"></i>
                         </div>
                     }
                     <div className='shopping' onClick={() => navigate('/cart')}>
-                        <i class="fa-solid fa-cart-shopping"/>
+                        <i className="fa-solid fa-cart-shopping" />
                     </div>
                 </div>
             </div>
