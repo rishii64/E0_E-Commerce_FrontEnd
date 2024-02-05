@@ -33,6 +33,10 @@ export default function HomeCompo() {
     const handleSearchItemClick = () => {
         setData([])
     }
+    const btnLogOutClick = () => {
+        dispatch(UserLogOut())
+        navigate('/')
+    }
     return (
         <>
             <header className='header'>
@@ -45,7 +49,7 @@ export default function HomeCompo() {
                         <i className="fa-solid fa-magnifying-glass searchIcon" onClick={handleSearchClick}></i>
                     </div>
                     {
-                        Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={() => dispatch(UserLogOut())}></i> : <div className='profile' onClick={() => navigate('/user/register')}>
+                        Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={btnLogOutClick}></i> : <div className='profile' onClick={() => navigate('/user/register')}>
                             <i className="fa-regular fa-user"></i>
                         </div>
                     }
@@ -60,7 +64,7 @@ export default function HomeCompo() {
                             loading ? <div className="loader" /> : <>
                                 {
                                     data.map((item) => {
-                                        return <p key={item.id} className='SearchList__Item'><Link to={`/product/${item.category}/${item.id}`} onClick={()=>handleSearchItemClick()}>{item.title.slice(0, 50)}</Link></p>
+                                        return <p key={item.id} className='SearchList__Item'><Link to={`/product/${item.category}/${item.id}`} onClick={() => handleSearchItemClick()}>{item.title.slice(0, 50)}</Link></p>
                                     })
                                 }
                             </>

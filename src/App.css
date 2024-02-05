@@ -66,7 +66,7 @@ body {
   max-height: 500px;
   position: absolute;
   z-index: 2;
-  top: 470%;
+  top: 9em;
   left:50%;
   overflow: scroll;
   transform: translate(-50%, -50%);
@@ -499,6 +499,7 @@ span {
   margin: 1em;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   gap: 2em;
   padding: 1.5em 1em;
 }
@@ -506,6 +507,7 @@ span {
   background: rgb(238, 252, 254);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   width: 26em;
+  height: 14em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -661,10 +663,14 @@ span {
   width: 13em;
 }
 
-
 @media only screen and (max-width:780px) {
   .registerPage,.loginPage{
     width: 60vw;
+  }
+  .prodDetails{ 
+    width: 22em;
+    height: 13em;
+    gap: .8em;
   }
   .productData{
     width: 14em;
@@ -726,6 +732,10 @@ span {
   }
   .cameraImg{
     max-height: 160px;
+  }
+  .prodDetails{ 
+    gap: .3em;
+    height: 13em;
   }
   .productData{
     width: 15em;

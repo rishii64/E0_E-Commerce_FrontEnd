@@ -59,7 +59,7 @@ export default function CartItems() {
                     <img className='cartImg' src={item.images.LinkOne} alt="" />
 
                     <div className="prodDetails">
-                      <h2 className='cartTitle'>{item.title.slice(0, 30)}</h2>
+                      <h2 className='cartTitle'>{item.title.slice(0, 22)}</h2>
                       <p> ₹{item.Dprice}</p>
                       <div>
                         <button className='btnDecrement' onClick={() => handleDecrement(item.id)}>-</button>
