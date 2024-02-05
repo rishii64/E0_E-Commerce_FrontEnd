@@ -76,7 +76,7 @@ export default function Login() {
       </span>
       <span>
         <label>Password: </label>
-        <input type='text' placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />  <br /><br />
+        <input type='password' placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />  <br /><br />
       </span>
       <button className='btnLogin' onClick={handleLogin}>Login</button>
       <p onClick={() => navigate('/user/register')}>New Here? Create an account</p>
