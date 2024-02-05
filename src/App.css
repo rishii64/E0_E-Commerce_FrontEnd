@@ -35,7 +35,7 @@ body {
 .LogOutIconButton{
   font-size: 26px;
 }
-.siteLogo:hover,.profile:hover,.LogOutIconButton:hover, .shopping:hover,.registerPage p:hover,.loginPage p:hover,
+.siteLogo:hover,.profile:hover,.searchIcon:hover,.LogOutIconButton:hover, .shopping:hover,.registerPage p:hover,.loginPage p:hover,
 .btnRegister:hover,.btnLogin:hover,.productData:hover,.addToCart:hover  {
   cursor: pointer;
 }

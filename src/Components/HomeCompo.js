@@ -13,12 +13,12 @@ import Navbar from './Navbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { UserLogOut } from '../Redux/Slice';
 import axios from 'axios';
+
 export default function HomeCompo() {
     const navigate = useNavigate()
     const { Authorized } = useSelector(state => state.App)
     const imageClick = () => navigate('/')
     const dispatch = useDispatch();
-
     const [data, setData] = useState([]);
     const [input, setInput] = useState('');
     const [loading, SetLoading] = useState(false)
@@ -42,7 +42,7 @@ export default function HomeCompo() {
                 <div className='headerRight'>
                     <div className='searchBox'>
                         <input className='search' type='text' placeholder='search products' onChange={(e) => setInput(e.target.value)} value={input} />
-                        <i className="fa-solid fa-magnifying-glass" onClick={handleSearchClick}></i>
+                        <i className="fa-solid fa-magnifying-glass searchIcon" onClick={handleSearchClick}></i>
                     </div>
                     {
                         Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={() => dispatch(UserLogOut())}></i> : <div className='profile' onClick={() => navigate('/user/register')}>
