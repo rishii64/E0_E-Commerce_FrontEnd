@@ -24,6 +24,7 @@ body {
   justify-content: space-between;
   padding: 5px 40px;
   margin: 5px 0;
+  position: relative;
 }
 .siteLogo {
   width: 3em;
@@ -32,7 +33,6 @@ body {
   font-size: 22px;
 }
 .LogOutIconButton{
-  color: tomato;
   font-size: 26px;
 }
 .siteLogo:hover,.profile:hover,.LogOutIconButton:hover, .shopping:hover,.registerPage p:hover,.loginPage p:hover,
@@ -58,6 +58,23 @@ body {
   border: none;
   outline: none;
   padding-left: 10px;
+}
+
+.searchItemContainer{
+  background-color: white;
+  width: 60%;
+  min-height: 120px;
+  position: absolute;
+  z-index: 2;
+  top: 200%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.SearchList__Item{
+  border: 2px solid blue;
+  width: 100%;
+  margin-top: 10px;
 }
 .title {
   border: 1px solid red;
@@ -284,13 +301,13 @@ span {
   align-items: center;
   text-align: center;
   gap: 1em;
-  padding: 1em;
+  padding: 1em .8em;
 }
 .info img {
   width: 2fr;
 }
 .info p {
-  font-size: 2.5vh;
+  font-size: 1em;
 }
 
 /*------------ Routes(Products) Page ------------*/
@@ -307,6 +324,7 @@ span {
 .productData {
   background: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   border-radius: 5px;
   width: 15em;
   height: 20em;
@@ -315,6 +333,9 @@ span {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+.productData:hover{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .productTitle a {
   text-decoration: none;
@@ -612,11 +633,11 @@ span {
 }
 .sectionTop {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .uShop,.followUs,.contactUs {
-  width: 26em;
+  width: 22em;
 }
 .followUs .footerIcons {
   display: flex;
@@ -646,6 +667,9 @@ span {
   }
   .nav-elements ul li:not(:last-child) {
     margin-right: 30px;
+  }
+  .sectionTop{
+    text-align: center;
   }
 }
 @media (max-width: 600px) {

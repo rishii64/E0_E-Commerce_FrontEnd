@@ -71,8 +71,8 @@ export default function ReadProducts() {
                   </div>
 
                   <button className='addToCart' type='button' onClick={(e) => handleAddToCartClick(e, item)}>
-                    <p class="button__text">Add to cart</p>
-                    <span class="button__icon"><i class="fa-solid fa-plus"/></span>
+                    <p className="button__text">Add to cart</p>
+                    <span className="button__icon"><i className="fa-solid fa-plus"/></span>
                   </button>
 
                   <div className="productDesc">Description: {item.description}</div>
