@@ -59,22 +59,26 @@ body {
   outline: none;
   padding-left: 10px;
 }
-
 .searchItemContainer{
+  border-radius: 5px;
   background-color: white;
   width: 60%;
-  min-height: 120px;
+  max-height: 500px;
   position: absolute;
   z-index: 2;
-  top: 200%;
+  top: 470%;
   left:50%;
+  overflow: scroll;
   transform: translate(-50%, -50%);
 }
-
 .SearchList__Item{
-  border: 2px solid blue;
   width: 100%;
   margin-top: 10px;
+  padding-left: 2em;
+}
+.SearchList__Item a{
+  text-decoration: none;
+  color: #000;
 }
 .title {
   border: 1px solid red;
@@ -708,16 +712,13 @@ span {
   .headerRight{
     gap: 10px;
   }
-  .search{width: 10em;}
-
+  .search{  width: 10em;}
+  .searchItemContainer{ width: 90%;}
   .registerPage,.loginPage{
     width: 90vw;
   }
-  .sectionTop,  .sectionBottom {
-    justify-content: center;
-    text-align: center;
-    gap: 1em;
-  }
+  .imageContainer {  height: 95%;}
+  .carousel .control-dots { margin: 5px 0;}
   .topMobiles,.topCameras,.topHeadphones,.topLaptops {
     flex-direction: column;
     margin: 1em 0;
@@ -728,13 +729,6 @@ span {
   }
   .productData{
     width: 15em;
-  }
-  .deliveryInfo {
-    flex-direction: column;
-    gap: 1em;
-  }
-  .info {
-    width: 100%;
   }
   .cartProducts{
     flex-direction: column;
@@ -760,4 +754,20 @@ span {
     bottom: 11vh;
     padding: 10px 20px;
   }
+  .sectionTop,  .sectionBottom {
+    justify-content: center;
+    text-align: center;
+    gap: 1em;
+  }
+  .deliveryInfo {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .info {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:350px) {
+  .headerRight{ width: 80%;}
+  .search{  width: 90%;}
 }

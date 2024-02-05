@@ -25,10 +25,13 @@ export default function HomeCompo() {
 
     const handleSearchClick = (e) => {
         SetLoading(true)
-        axios.get(`http://localhost:4000/search/${input}`).then((response) => {
+        axios.get(`https://e-commerce-backend-w7x2.onrender.com/search/${input}`).then((response) => {
             setData(response.data);
             SetLoading(false)
         })
+    }
+    const handleSearchItemClick = () => {
+        setData([])
     }
     return (
         <>
@@ -57,15 +60,13 @@ export default function HomeCompo() {
                             loading ? <div className="loader" /> : <>
                                 {
                                     data.map((item) => {
-                                        return <p key={item.id} className='SearchList__Item'><Link to={`/product/${item.category}/${item.id}`}>{item.title}</Link></p>
+                                        return <p key={item.id} className='SearchList__Item'><Link to={`/product/${item.category}/${item.id}`} onClick={()=>handleSearchItemClick()}>{item.title.slice(0, 50)}</Link></p>
                                     })
                                 }
                             </>
                         }
                     </div>
                 }
-
-
             </header>
             <Navbar />
             <Routes>
