@@ -35,7 +35,7 @@ export default function HomeCompo() {
         setData([])
     }
     const btnLogOutClick = () => {
-        toast.success('Logged in Successfully!!');
+        toast.success('Logged out Successfully!!');
         dispatch(UserLogOut())
         setTimeout(() => {
             navigate('/')
@@ -45,6 +45,7 @@ export default function HomeCompo() {
         <>
             <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false}
                 closeOnClick={true} draggable={true} progress={undefined} theme="light" />
+
             <header className='header'>
                 <div className="headerLeft">
                     <img onClick={imageClick} className='siteLogo' src={logo} alt='uShop' />

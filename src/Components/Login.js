@@ -32,8 +32,8 @@ export default function Login() {
             toast.error('Incorrect Password!!');
           }
           else {
-            dispatch(UserLogin(res.data.userData));
             toast.success('Logged in Successfully!!');
+            dispatch(UserLogin(res.data.userData));
             localStorage.setItem('Token:', res.data.token)
             setTimeout(() => {
               navigate('/')
@@ -51,7 +51,7 @@ export default function Login() {
     <>
       <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false}
         closeOnClick={true} draggable={true} progress={undefined} theme="light" />
-        
+
       <div className='loginPage'>
         <section>
           <h1>Login Page</h1>
