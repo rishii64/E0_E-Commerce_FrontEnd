@@ -13,6 +13,7 @@ import Navbar from './Navbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { UserLogOut } from '../Redux/Slice';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function HomeCompo() {
     const navigate = useNavigate()
@@ -34,11 +35,16 @@ export default function HomeCompo() {
         setData([])
     }
     const btnLogOutClick = () => {
+        toast.success('Logged in Successfully!!');
         dispatch(UserLogOut())
-        navigate('/')
+        setTimeout(() => {
+            navigate('/')
+        }, 2000);
     }
     return (
         <>
+            <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false}
+                closeOnClick={true} draggable={true} progress={undefined} theme="light" />
             <header className='header'>
                 <div className="headerLeft">
                     <img onClick={imageClick} className='siteLogo' src={logo} alt='uShop' />
@@ -49,12 +55,13 @@ export default function HomeCompo() {
                         <i className="fa-solid fa-magnifying-glass searchIcon" onClick={handleSearchClick}></i>
                     </div>
                     {
-                        Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={btnLogOutClick}></i> : <div className='profile' onClick={() => navigate('/user/register')}>
-                            <i className="fa-regular fa-user"></i>
-                        </div>
+                        Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={btnLogOutClick} /> :
+                            <div className='profile' onClick={() => navigate('/user/register')}>
+                                <i className="fa-regular fa-user"></i>
+                            </div>
                     }
                     <div className='shopping' onClick={() => navigate('/cart')}>
-                        <i className="fa-solid fa-cart-shopping" />
+                        <i title='see cart' className="fa-solid fa-cart-shopping" />
                     </div>
                 </div>
 

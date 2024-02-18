@@ -25,35 +25,19 @@ export default function Login() {
         .then((res) => {
           console.log(res.data);
           if (res.data.msg === "User not registered") {
-            alert(res.data.msg)
+            toast.error('User not registered !!');
             navigate('/user/register')
           }
           else if (res.data.msg === 'Password is incorrect') {
-            toast.error('Password is incorrect!!', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.error('Incorrect Password!!');
           }
           else {
             dispatch(UserLogin(res.data.userData));
-            toast.success('Logged in Successfully!!', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.success('Logged in Successfully!!');
             localStorage.setItem('Token:', res.data.token)
-            navigate('/')
+            setTimeout(() => {
+              navigate('/')
+            }, 2000);
           }
         })
     }
@@ -64,22 +48,26 @@ export default function Login() {
 
 
   return (
-    <div className='loginPage'>
-      <ToastContainer />
-      <section>
-        <h1>Login Page</h1>
-        <cite><b>Get access to your Orders and Wishlist</b></cite>
-      </section>
-      <span>
-        <label>E-mail: </label>
-        <input type='text' placeholder='enter e-mail' value={email} onChange={(e) => setEmail(e.target.value)} />  <br /><br />
-      </span>
-      <span>
-        <label>Password: </label>
-        <input type='password' placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />  <br /><br />
-      </span>
-      <button className='btnLogin' onClick={handleLogin}>Login</button>
-      <p onClick={() => navigate('/user/register')}>New Here? Create an account</p>
-    </div>
+    <>
+      <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false}
+        closeOnClick={true} draggable={true} progress={undefined} theme="light" />
+        
+      <div className='loginPage'>
+        <section>
+          <h1>Login Page</h1>
+          <cite><b>Get access to your Orders and Wishlist</b></cite>
+        </section>
+        <span>
+          <label>E-mail: </label>
+          <input type='text' placeholder='enter e-mail' value={email} onChange={(e) => setEmail(e.target.value)} />  <br /><br />
+        </span>
+        <span>
+          <label>Password: </label>
+          <input type='password' placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />  <br /><br />
+        </span>
+        <button className='btnLogin' onClick={handleLogin}>Login</button>
+        <p onClick={() => navigate('/user/register')}>New Here? Create an account</p>
+      </div>
+    </>
   )
 }

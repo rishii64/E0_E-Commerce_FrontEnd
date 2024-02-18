@@ -62,7 +62,7 @@ const Slice = createSlice({
         UserLogOut(state) {
             state.Authorized = false;
             state.userId = [];
-            localStorage.clear("userId")
+            localStorage.clear()
         }
     }
 })

@@ -67,8 +67,8 @@ export default function CartItems() {
                         <button className='btnIncrement' onClick={() => handleIncrement(item.id)}>+</button>
                       </div>
                       <button className='btnRemove' onClick={() => handleRemove(item.id)}>
-                        <p class="button__text">Remove</p>
-                        <span class="button__icon"><i className="fa-solid fa-x" style={{ color: "white", }} /></span>
+                        <p className="button__text">Remove</p>
+                        <span className="button__icon"><i className="fa-solid fa-x" style={{ color: "white", }} /></span>
                       </button>
                     </div>
                   </div>
