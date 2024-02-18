@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Register() {
@@ -44,9 +44,6 @@ export default function Register() {
 
   return (
     <>
-      <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false}
-        closeOnClick={true} draggable={true} progress={undefined} theme="light" />
-
       <div className='registerPage'>
         <section>
           <h1>Looks like you're new here!</h1>

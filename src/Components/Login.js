@@ -3,7 +3,7 @@ import axios from 'axios'
 import { UserLogin } from '../Redux/Slice';
 import { useDispatch } from "react-redux"
 import { useNavigate } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
@@ -23,7 +23,7 @@ export default function Login() {
     try {
       axios.post(`https://e-commerce-backend-w7x2.onrender.com/user/login`, { email, password })
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.msg === "User not registered") {
             toast.error('User not registered !!');
             navigate('/user/register')
@@ -32,8 +32,17 @@ export default function Login() {
             toast.error('Incorrect Password!!');
           }
           else {
-            toast.success('Logged in Successfully!!');
             dispatch(UserLogin(res.data.userData));
+            toast.success('Logged in successfully!', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
             localStorage.setItem('Token:', res.data.token)
             setTimeout(() => {
               navigate('/')
@@ -49,9 +58,6 @@ export default function Login() {
 
   return (
     <>
-      <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false}
-        closeOnClick={true} draggable={true} progress={undefined} theme="light" />
-
       <div className='loginPage'>
         <section>
           <h1>Login Page</h1>

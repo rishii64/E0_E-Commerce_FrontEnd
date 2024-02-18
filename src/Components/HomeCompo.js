@@ -13,12 +13,11 @@ import Navbar from './Navbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { UserLogOut } from '../Redux/Slice';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export default function HomeCompo() {
     const navigate = useNavigate()
     const { Authorized } = useSelector(state => state.App)
-    const imageClick = () => navigate('/')
     const dispatch = useDispatch();
     const [data, setData] = useState([]);
     const [input, setInput] = useState('');
@@ -35,20 +34,28 @@ export default function HomeCompo() {
         setData([])
     }
     const btnLogOutClick = () => {
-        toast.success('Logged out Successfully!!');
         dispatch(UserLogOut())
+        toast.success('Logged out !', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
         setTimeout(() => {
             navigate('/')
         }, 2000);
     }
     return (
         <>
-            <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false}
-                closeOnClick={true} draggable={true} progress={undefined} theme="light" />
+            
 
             <header className='header'>
                 <div className="headerLeft">
-                    <img onClick={imageClick} className='siteLogo' src={logo} alt='uShop' />
+                    <img onClick={() => navigate('/')} className='siteLogo' src={logo} alt='uShop' />
                 </div>
                 <div className='headerRight'>
                     <div className='searchBox'>
