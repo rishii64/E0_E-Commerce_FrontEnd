@@ -29,7 +29,7 @@ export default function Home() {
   }, [path])
   return (
     <div className='homePage'>
-      <Carousel className='ImgCrsl' autoPlay={true}>
+      <Carousel className='ImgCrsl' autoPlay={true} infiniteLoop>
         <div className='imageContainer'>
           <img className='image' src="https://img.freepik.com/free-vector/horizontal-banner-template-black-friday-sales_23-2150867247.jpg?w=1380&t=st=1706529299~exp=1706529899~hmac=d42013852b0b4241b23b68f95877850368b10d414f5ea5d0d13d9631a641bf9d" alt='not found' />
         </div>
