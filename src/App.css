@@ -43,7 +43,7 @@ body {
   font-size: 26px;
 }
 .siteLogo:hover,.profile:hover,.searchIcon:hover,.LogOutIconButton:hover, .shopping:hover,.registerPage p:hover,.loginPage p:hover,
-.btnRegister:hover,.btnLogin:hover,.productData:hover,.addToCart:hover  {
+.btnRegister:hover,.btnLogin:hover,.productData:hover,.addToCart:hover,.btnDecrement:hover,.btnIncrement:hover  {
   cursor: pointer;
 }
 .headerRight {
@@ -532,6 +532,12 @@ span {
 }
 .prodDetails p,.prodDetails span{
   font-size: 20px;
+}
+.modification{
+  width: 8em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 .cartImg{
   width: 15em;
