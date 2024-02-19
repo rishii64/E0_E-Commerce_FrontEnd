@@ -37,7 +37,7 @@ export default function HomeCompo() {
         dispatch(UserLogOut())
         toast.success('Logged out !', {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -51,11 +51,9 @@ export default function HomeCompo() {
     }
     return (
         <>
-            
-
             <header className='header'>
                 <div className="headerLeft">
-                    <img onClick={() => navigate('/')} className='siteLogo' src={logo} alt='uShop' />
+                    <img title='Home' onClick={() => navigate('/')} className='siteLogo' src={logo} alt='uShop' />
                 </div>
                 <div className='headerRight'>
                     <div className='searchBox'>
@@ -64,7 +62,7 @@ export default function HomeCompo() {
                     </div>
                     {
                         Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={btnLogOutClick} /> :
-                            <div className='profile' onClick={() => navigate('/user/register')}>
+                            <div title='Login' className='profile' onClick={() => navigate('/user/register')}>
                                 <i className="fa-regular fa-user"></i>
                             </div>
                     }

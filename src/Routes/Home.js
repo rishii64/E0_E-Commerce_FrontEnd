@@ -29,16 +29,16 @@ export default function Home() {
   }, [path])
   return (
     <div className='homePage'>
-      <Carousel className='ImgCrsl'>
+      <Carousel className='ImgCrsl' autoPlay={true}>
         <div className='imageContainer'>
           <img className='image' src="https://img.freepik.com/free-vector/horizontal-banner-template-black-friday-sales_23-2150867247.jpg?w=1380&t=st=1706529299~exp=1706529899~hmac=d42013852b0b4241b23b68f95877850368b10d414f5ea5d0d13d9631a641bf9d" alt='not found' />
         </div>
 
         <div className='imageContainer'>
-          <img className='image' src="https://img.freepik.com/free-photo/photocomposition-horizontal-shopping-banner-with-woman-big-smartphone_23-2151201773.jpg?w=1060&t=st=1706529256~exp=1706529856~hmac=795b97af0b8bfb4ca2d67070f36d124d74c4937bf24ddd5ff8a070fea1f1fe08" alt='not found' />
+          <img className='image' src="https://rukminim1.flixcart.com/flap/3376/560/image/57267a180af306fe.jpg?q=50" alt='not found' />
         </div>
         <div className='imageContainer'>
-          <img className='image' src="https://img.freepik.com/free-vector/realistic-black-friday-social-media-promo-template_23-2149110140.jpg?w=996&t=st=1706529420~exp=1706530020~hmac=3c386708ea5e7b4b57682f7a2e232287ea115f07664f8fe1c2fdd4beea5fc6dd" alt='not found' />
+          <img className='image' src="https://rukminim1.flixcart.com/flap/3376/560/image/f6202f13b6f89b03.jpg?q=50" alt='not found' />
         </div>
         <div className='imageContainer'>
           <img className='image' src={banner4} alt='not found' />
