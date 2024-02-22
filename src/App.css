@@ -283,7 +283,7 @@ span {
   padding: 1em 0;
 }
 .topProducts h1{
-  margin-left: 1.5em;
+  margin: 0.3em 0 .2em 1.5em;
 }
 .topMobiles,.topLaptops,.topHeadphones,.topCameras {
   height: fit-content;
@@ -532,12 +532,13 @@ span {
   justify-content: space-around;
 }
 .cartImg{
-  padding: 2em 1em ;
+  padding: 1.5em 1em ;
   width: 17em;
   height: 15em;
   object-fit: contain;
-  background: rgb(220, 237, 249);
-  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 10px 0;
 }
 .priceDetails{
   border-radius: 5px;
