@@ -61,7 +61,7 @@ export default function HomeCompo() {
                         <i className="fa-solid fa-magnifying-glass searchIcon" onClick={handleSearchClick}></i>
                     </div>
                     {
-                        Authorized ? <i title='Log Out' className="fa-solid fa-right-from-bracket LogOutIconButton" onClick={btnLogOutClick} /> :
+                        Authorized ? <i title='Log Out' className="fa-solid fa-arrow-right-to-bracket LogOutIconButton" onClick={btnLogOutClick} /> :
                             <div title='Login' className='profile' onClick={() => navigate('/user/register')}>
                                 <i className="fa-regular fa-user"></i>
                             </div>
