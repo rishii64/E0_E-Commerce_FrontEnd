@@ -22,7 +22,7 @@ export default function HomeCompo() {
     const [data, setData] = useState([]);
     const [input, setInput] = useState('');
     const [loading, SetLoading] = useState(false)
-
+    
     const handleSearchClick = (e) => {
         SetLoading(true)
         axios.get(`https://e-commerce-backend-w7x2.onrender.com/search/${input}`).then((response) => {
