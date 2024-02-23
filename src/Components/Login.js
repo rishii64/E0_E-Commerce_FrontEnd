@@ -23,26 +23,18 @@ export default function Login() {
     try {
       axios.post(`https://e-commerce-backend-w7x2.onrender.com/user/login`, { email, password })
         .then((res) => {
-          // console.log(res.data);
           if (res.data.msg === "User not registered") {
             toast.error('User not registered !!');
-            navigate('/user/register')
+            setTimeout(() => {
+              navigate('/user/register')
+            }, 2000);
           }
           else if (res.data.msg === 'Password is incorrect') {
             toast.error('Incorrect Password!!');
           }
           else {
             dispatch(UserLogin(res.data.userData));
-            toast.success('Logged in successfully!', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.success('Logged in successfully!');
             localStorage.setItem('Token:', res.data.token)
             setTimeout(() => {
               navigate('/')

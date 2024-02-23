@@ -35,16 +35,7 @@ export default function HomeCompo() {
     }
     const btnLogOutClick = () => {
         dispatch(UserLogOut())
-        toast.success('Logged out !', {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
+        toast.success('Logged out !');
         setTimeout(() => {
             navigate('/')
         }, 2000);
