@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import {toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Register() {
   const [name, setName] = useState('')
@@ -23,17 +22,17 @@ export default function Register() {
       axios.post(`https://e-commerce-backend-w7x2.onrender.com/user/register`, tempData)
         .then((res) => {
           if (res.data.msg === 'This email is already in use !!') {
-            toast.info('This email is already in use !!');
+            toast.error('This email is already in use !!');
             setTimeout(() => {
               navigate('/user/login')
-            }, 2000);
+            }, 1000);
           }
           else {
             toast('Success!!');
             localStorage.setItem('Token:', res.data.token)
             setTimeout(() => {
               navigate('/')
-            }, 2000);
+            }, 1000);
           }
         })
     }
@@ -44,6 +43,7 @@ export default function Register() {
 
   return (
     <>
+    <Toaster/>
       <div className='registerPage'>
         <section>
           <h1>Looks like you're new here!</h1>

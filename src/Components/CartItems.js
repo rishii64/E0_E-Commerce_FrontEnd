@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux'
 import { increaseQuantity, decreaseQuantity, removeProduct } from '../Redux/Slice'
 // import Payment from './Payment_Integration/Payment';
@@ -17,6 +16,7 @@ export default function CartItems() {
 
   useEffect(() => {
     const token = localStorage.getItem('Token:')
+    toast.error('Invalid User')
     if (!token) {
       navigate('/user/login')
     }
@@ -46,7 +46,7 @@ export default function CartItems() {
 
   return (
     <div>
-      <ToastContainer />
+      <Toaster />
       {
         checkOut ? <div className="loader" /> : <>
           {

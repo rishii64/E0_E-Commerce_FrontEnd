@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios'
 import { useDispatch } from "react-redux"
 import { addToCart } from '../Redux/Slice';
@@ -54,7 +54,7 @@ export default function ReadProducts() {
   }
   return (
     <>
-      <ToastContainer />
+      <Toaster />
       <div className="readProduct">
         {loading ? <div className="loader" /> :
           products.map((item, index) => {
@@ -72,7 +72,7 @@ export default function ReadProducts() {
 
                   <button className='addToCart' type='button' onClick={(e) => handleAddToCartClick(e, item)}>
                     <p className="button__text">Add to cart</p>
-                    <span className="button__icon"><i className="fa-solid fa-plus"/></span>
+                    <span className="button__icon"><i className="fa-solid fa-plus" /></span>
                   </button>
 
                   <div className="productDesc">Description: {item.description}</div>

@@ -13,7 +13,7 @@ import Navbar from './Navbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { UserLogOut } from '../Redux/Slice';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function HomeCompo() {
     const navigate = useNavigate()
@@ -22,7 +22,7 @@ export default function HomeCompo() {
     const [data, setData] = useState([]);
     const [input, setInput] = useState('');
     const [loading, SetLoading] = useState(false)
-    
+
     const handleSearchClick = (e) => {
         SetLoading(true)
         axios.get(`https://e-commerce-backend-w7x2.onrender.com/search/${input}`).then((response) => {
@@ -38,10 +38,11 @@ export default function HomeCompo() {
         toast.success('Logged out !');
         setTimeout(() => {
             navigate('/')
-        }, 2000);
+        }, 1000);
     }
     return (
         <>
+            <Toaster />
             <header className='header'>
                 <div className="headerLeft">
                     <img title='Home' onClick={() => navigate('/')} className='siteLogo' src={logo} alt='uShop' />

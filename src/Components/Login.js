@@ -3,8 +3,7 @@ import axios from 'axios'
 import { UserLogin } from '../Redux/Slice';
 import { useDispatch } from "react-redux"
 import { useNavigate } from 'react-router-dom'
-import {toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -27,7 +26,7 @@ export default function Login() {
             toast.error('User not registered !!');
             setTimeout(() => {
               navigate('/user/register')
-            }, 2000);
+            }, 1000);
           }
           else if (res.data.msg === 'Password is incorrect') {
             toast.error('Incorrect Password!!');
@@ -38,7 +37,7 @@ export default function Login() {
             localStorage.setItem('Token:', res.data.token)
             setTimeout(() => {
               navigate('/')
-            }, 2000);
+            }, 1000);
           }
         })
     }
@@ -47,9 +46,9 @@ export default function Login() {
     }
   }
 
-
   return (
     <>
+      <Toaster />
       <div className='loginPage'>
         <section>
           <h1>Login Page</h1>
